@@ -7,11 +7,24 @@
     <h1>Welcome to the API!</h1>
     <h2>How to use this API:</h2>
     <ul>
+      <li>
+        <strong>POST /signup :</strong> Register a new user. The body should be
+        a JSON object containing 'username' and 'password' keys.
+      </li>
+      <li>
+        <strong>POST /login :</strong> Authenticate an existing user. The
+        payload should be a JSON object with 'username' and 'password' keys.
+        This endpoint returns a JWT token when successful.
+      </li>
+      <li>
+        <strong>GET /logout :</strong> Invalidate a user's JWT token. This
+        endpoint needs no payload.
+      </li>
       <li><strong>GET /reservs :</strong> Get all reservations.</li>
       <li>
         <strong>POST /reservs :</strong> Create a new reservation. The body
         should be a JSON object with 'name', 'description', 'date', 'phone',
-        'email' and 'created_at' keys.
+        'email', 'created_at' and 'user_id' keys.
       </li>
       <li>
         <strong>PUT /reservs :</strong> Update an existing reservation. The body
