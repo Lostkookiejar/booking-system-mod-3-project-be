@@ -7,23 +7,22 @@
     <h1>Welcome to the API!</h1>
     <h2>How to use this API:</h2>
     <ul>
+      <li><strong>GET /reservs :</strong> Get all reservations.</li>
       <li>
-        <strong>GET /reservs/:id :</strong> Get a post by ID. Replace ':id' with
-        the ID of the post you want to retrieve.
+        <strong>POST /reservs :</strong> Create a new reservation. The body
+        should be a JSON object with 'name', 'description', 'date', 'phone',
+        'email' and 'created_at' keys.
       </li>
       <li>
-        <strong>POST /reservs :</strong> Create a new post. The body should be a
-        JSON object with 'title', 'content', and 'author' keys.
+        <strong>PUT /reservs :</strong> Update an existing reservation. The body
+        should be a JSON object with 'name', 'description', 'date', 'phone',
+        'email' and 'created_at' keys. 'created_at' key should specifically
+        correlate to the post you want to update.
       </li>
       <li>
-        <strong>PUT /reservs/:id :</strong> Update an existing post. Replace
-        ':id' with the ID of the post you want to update. The body should be a
-        JSON object with the 'title', 'content', and 'author' keys you want to
-        update.
-      </li>
-      <li>
-        <strong>DELETE /reservs/:id :</strong> Delete a post. Replace ':id' with
-        the ID of the post you want to delete.
+        <strong>DELETE /reservs :</strong> Delete a reservation. The body should
+        be a JSON object with 'created_at' key, which should specifically
+        correlate to the post you want to delete.
       </li>
     </ul>
   </body>
