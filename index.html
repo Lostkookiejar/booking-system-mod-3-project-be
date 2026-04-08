@@ -17,14 +17,15 @@
         This endpoint returns a JWT token when successful.
       </li>
       <li>
-        <strong>GET /logout :</strong> Invalidate a user's JWT token. This
-        endpoint needs no payload.
-      </li>
-      <li><strong>GET /reservs :</strong> Get all reservations.</li>
-      <li>
         <strong>POST /reservs :</strong> Create a new reservation. The body
         should be a JSON object with 'name', 'description', 'date', 'phone',
         'email', 'created_at' and 'user_id' keys.
+      </li>
+      <li><strong>GET /reservs :</strong> Get all reservations.</li>
+      <li>
+        <strong>GET /reservs/user/:user_id :</strong> Get all reservations from
+        a specific user. The specific user is identified with the :user_id
+        parameter. Automatically runs when HomePage is rendered.
       </li>
       <li>
         <strong>PUT /reservs :</strong> Update an existing reservation. The body
@@ -33,9 +34,8 @@
         correlate to the post you want to update.
       </li>
       <li>
-        <strong>DELETE /reservs :</strong> Delete a reservation. The body should
-        be a JSON object with 'created_at' key, which should specifically
-        correlate to the post you want to delete.
+        <strong>DELETE /reservs/:created_at :</strong> Delete a reservation. The
+        specific reservation is identified with the :create_at parameter.
       </li>
     </ul>
   </body>
